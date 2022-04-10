@@ -1,7 +1,7 @@
 from string import Template
 import telebot
 from telebot import types
-bot.remove_webhook()
+bot.delete_webhook()
 TOKEN = '5268022321:AAGRXcBAWkbGrTvrOjYgr64tFW_Whuxc4OQ'
 
 CHAT_ID = '-1001533115482'
