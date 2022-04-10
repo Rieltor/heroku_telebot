@@ -1,13 +1,13 @@
 from string import Template
 import telebot
 from telebot import types
-bot.delete_webhook()
-TOKEN = '5268022321:AAGRXcBAWkbGrTvrOjYgr64tFW_Whuxc4OQ'
 
+TOKEN = '5268022321:AAGRXcBAWkbGrTvrOjYgr64tFW_Whuxc4OQ'
+bot = telebot.TeleBot(TOKEN)
+bot.delete_webhook()
 CHAT_ID = '-1001533115482'
 user_dict = {}
 
-bot = telebot.TeleBot(TOKEN)
 
 class User:
     def __init__(self, city):
