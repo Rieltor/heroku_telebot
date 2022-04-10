@@ -4,7 +4,7 @@ from flask import Flask, request
 from string import Template
 import telebot
 from telebot import types
-TOKEN = '5268022321:AAGRXcBAWkbGrTvrOjYgr64tFW_Whuxc4OQ'
+TOKEN = '5279679226:AAGk5SvmNDv86imTyjtW8KBcIqMdugjZcrc'
 
 CHAT_ID = '-1001533115482'
 user_dict = {}
