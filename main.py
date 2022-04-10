@@ -1,6 +1,7 @@
 from string import Template
 import telebot
 from telebot import types
+bot.remove_webhook()
 TOKEN = '5268022321:AAGRXcBAWkbGrTvrOjYgr64tFW_Whuxc4OQ'
 
 CHAT_ID = '-1001533115482'
@@ -429,5 +430,4 @@ def getRegData9(user, title, name):
         'driveO': user.driveO,
         'driveH': user.driveH
     })
-if __name__ == '__main__':
-    bot.polling(none_stop=True)
+bot.polling(none_stop=True)
