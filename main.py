@@ -5,7 +5,7 @@ from telebot import types
 TOKEN = '5279679226:AAGk5SvmNDv86imTyjtW8KBcIqMdugjZcrc'
 bot = telebot.TeleBot(TOKEN)
 bot.delete_webhook()
-CHAT_ID = '-1001606797985'
+CHAT_ID = '-1001795660075'
 user_dict = {}
 
 
