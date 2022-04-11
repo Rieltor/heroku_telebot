@@ -31,24 +31,7 @@ def start(message):
     bot.send_message(message.chat.id, 'Привет, {0.first_name}, я бот и ты можешь выбрать следующие действия !'.format(message.from_user), reply_markup=markup)
 
 
-@bot.message_handler(commands=['About'])
-def about_company(message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    ab = types.KeyboardButton('Назад')
-    markup.add(ab)
-    msg11 = bot.send_message(message.chat.id, 'Мы официальный партнёр всех застройщиков города Новосибирск, кроме долгостроев. '
-                                      'Подберём, оформим и юридически сопроводим бесплатно.', reply_markup=markup)
-    bot.register_next_step_handler(msg11, back3)
-def back3(message):
-    if message.text == 'Назад':
-        chat_id = message.chat.id
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        one = types.KeyboardButton('/Инвестиции')
-        two = types.KeyboardButton('/Продажа')
-        three = types.KeyboardButton('/Покупка')
-        four = types.KeyboardButton('/About')
-        markup.add(one, two, three, four)
-        bot.send_message(chat_id, 'Хорошо, давайте начнем заново'.format(message.from_user), reply_markup=markup)
+
 @bot.message_handler(commands=['Инвестиции'])
 def bot_message(message):
         chat_id = message.chat.id
@@ -64,10 +47,6 @@ def bot_message(message):
         bot.register_next_step_handler(msg, process_city_step)
         bot.register_next_step_handler(msg, process_city_step1)
         bot.register_next_step_handler(msg, back1)
-
-
-
-
 
 
 
