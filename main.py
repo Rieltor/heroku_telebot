@@ -26,8 +26,7 @@ def start(message):
     one = types.KeyboardButton('/Инвестиции')
     two = types.KeyboardButton('/Продажа')
     three = types.KeyboardButton('/Покупка')
-    four = types.KeyboardButton('/About')
-    markup.add(one, two, three, four)
+    markup.add(one, two, three)
     bot.send_message(message.chat.id, 'Привет, {0.first_name}, я бот и ты можешь выбрать следующие действия !'.format(message.from_user), reply_markup=markup)
 
 
@@ -105,8 +104,7 @@ def back1(message):
         one = types.KeyboardButton('/Инвестиции')
         two = types.KeyboardButton('/Продажа')
         three = types.KeyboardButton('/Покупка')
-        four = types.KeyboardButton('/About')
-        markup.add(one, two, three, four)
+        markup.add(one, two, three)
         bot.send_message(chat_id, 'Хорошо, давайте начнем заново'.format(message.from_user), reply_markup=markup)
 def getRegData1(user, title, name):
     s = Template('$title *$name* \n Выбор пункта 1: *$sup* \n Выбор пункта 2: *$driverNumber* \n Данные : *$driveSeria*')
@@ -263,8 +261,7 @@ def back2(message):
         one = types.KeyboardButton('/Инвестиции')
         two = types.KeyboardButton('/Продажа')
         three = types.KeyboardButton('/Покупка')
-        four = types.KeyboardButton('/About')
-        markup.add(one, two, three, four)
+        markup.add(one, two, three)
         bot.send_message(chat_id, 'Хорошо, давайте начнем заново'.format(message.from_user), reply_markup=markup)
 
 def getRegData5(user, title, name):
@@ -398,8 +395,7 @@ def back3(message):
         one = types.KeyboardButton('/Инвестиции')
         two = types.KeyboardButton('/Продажа')
         three = types.KeyboardButton('/Покупка')
-        four = types.KeyboardButton('/About')
-        markup.add(one, two, three, four)
+        markup.add(one, two, three)
         bot.send_message(chat_id, 'Хорошо, давайте начнем заново'.format(message.from_user), reply_markup=markup)
 def getRegData9(user, title, name):
     p = Template('$title *$name* \n Выбор пункта 1: *$driveX*  \n Выбор пункта 2: *$driveO* \n Данные: *$driveH* ')
