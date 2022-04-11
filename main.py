@@ -1,16 +1,15 @@
-import os
-from flask import Flask, request
 
 from string import Template
 import telebot
 from telebot import types
 TOKEN = '5279679226:AAGk5SvmNDv86imTyjtW8KBcIqMdugjZcrc'
-
+bot = telebot.TeleBot(TOKEN)
+bot.delete_webhook()
 CHAT_ID = '-1001533115482'
 user_dict = {}
-APP_URL = f'https://telehero.herokuapp.com/{TOKEN}'
-bot = telebot.TeleBot(TOKEN)
-server = Flask(__name__)
+
+
+
 class User:
     def __init__(self, city):
         self.city = city
@@ -432,16 +431,4 @@ def getRegData9(user, title, name):
         'driveO': user.driveO,
         'driveH': user.driveH
     })
-@server.route('/' + TOKEN, methods = ['POST'] )
-def get_message():
-    json_string = request.get_data().decode('utf-8')
-    update =telebot.types.Update.de_json(json_string)
-    bot.process_new_updates(update)
-    return '!', 200
-@server.route('/')
-def webhook():
-    bot.remove_webhook()
-    bot.set_webhook(url=APP_URL)
-    return '!', 200
-if __name__ == '__main__':
-    server.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+bot.polling(none_stop=True)
