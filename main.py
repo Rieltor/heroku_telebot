@@ -86,7 +86,7 @@ def func1(message):
         user = user_dict[chat_id]
         user.phone = message.text
         bot.send_message(chat_id, getRegData(user, 'Ваша заявка принята!', message.from_user.first_name), parse_mode='Markdown')
-        bot.send_message(chat_id, getRegData(user, 'Заявка от бота', bot.get_me().username), parse_mode='Markdown')
+        bot.send_message(CHAT_ID, getRegData(user, 'Заявка от бота', bot.get_me().username), parse_mode='Markdown')
     except Exception as e:
         bot.reply_to(message, 'ooops')
 
