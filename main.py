@@ -2,10 +2,10 @@
 from string import Template
 import telebot
 from telebot import types
-TOKEN = '5279679226:AAGk5SvmNDv86imTyjtW8KBcIqMdugjZcrc'
+TOKEN = '5268022321:AAGRXcBAWkbGrTvrOjYgr64tFW_Whuxc4OQ'
 bot = telebot.TeleBot(TOKEN)
 bot.delete_webhook()
-CHAT_ID = '-1001795660075'
+CHAT_ID = '-1001533115482'
 user_dict = {}
 
 
@@ -14,7 +14,7 @@ class User:
         self.city = city
         keys = ['invest', 'invest_cash', 'invest_cash_reg', 'mortgage_reg', 'mortgage', 'driveN', 'driveR', 'driveS', 'driveV',
                 'driveL', 'driveG', 'driveF', 'driveD', 'driveA', 'driveZ', 'driveI', 'driveP', 'driveX', 'driveM',
-                'driveQ', 'driveJ', 'driveC', 'driveE', 'driveY', 'driveO', 'driveH']
+                'driveQ', 'driveJ', 'driveMM', 'driveE', 'driveY', 'driveO', 'driveH']
         for key in keys:
             self.key = None
 
@@ -297,8 +297,8 @@ def bot_message3(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     vt2 = types.KeyboardButton('Обмен')
     nv2 = types.KeyboardButton('Оценка')
-    bc3 = types.KeyboardButton('Назад')
-    markup.add(vt2, nv2, bc3)
+    bc2 = types.KeyboardButton('Назад')
+    markup.add(vt2, nv2, bc2)
     msg6 = bot.send_message(chat_id, 'Продолжим', reply_markup=markup)
     bot.register_next_step_handler(msg6, process_city_step8)
     bot.register_next_step_handler(msg6, process_city_step9)
@@ -330,7 +330,7 @@ def process_city_step11(message):
     if message.text == 'Новостройка':
         chat_id = message.chat.id
         user = user_dict[chat_id]
-        user.driveС = message.text
+        user.driveMM = message.text
         markup = types.ReplyKeyboardRemove(selective=False)
         msg9 = bot.send_message(chat_id, 'Введите адрес, площадь в м2 и ваш контактный номер, чтобы мы могли взязаться с вами:(Пример: НСК, красный проспект 1; 100м2;79...)', reply_markup=markup)
         bot.register_next_step_handler(msg9, func8)
@@ -365,13 +365,13 @@ def getRegData7(user, title, name):
         'driveE': user.driveE
     })
 def getRegData8(user, title, name):
-    i = Template('$title *$name* \n Выбор пункта 1: *$driveX* \n Выбор пункта 2: *$driveM* \n Выбор пункта 3: *$driveC* \n Данные: *$driveY* ')
+    i = Template('$title *$name* \n Выбор пункта 1: *$driveX* \n Выбор пункта 2: *$driveM* \n Выбор пункта 3: *$driveMM* \n Данные: *$driveY* ')
     return i.substitute({
         'title': title,
         'name': name,
         'driveX': user.driveX,
         'driveM': user.driveM,
-        'driveC': user.driveC,
+        'driveMM': user.driveMM,
         'driveY': user.driveY
     })
 def process_city_step9(message):
