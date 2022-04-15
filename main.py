@@ -2,10 +2,10 @@
 from string import Template
 import telebot
 from telebot import types
-TOKEN = '5268022321:AAGRXcBAWkbGrTvrOjYgr64tFW_Whuxc4OQ'
+TOKEN = '5279679226:AAGk5SvmNDv86imTyjtW8KBcIqMdugjZcrc'
 bot = telebot.TeleBot(TOKEN)
 bot.delete_webhook()
-CHAT_ID = '-1001533115482'
+CHAT_ID = '-1001795660075'
 user_dict = {}
 
 
